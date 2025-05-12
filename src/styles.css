@@ -17,6 +17,13 @@ nav > div {
     display: flex;
     gap: 10px;
 }
+nav > .sidebar-header {
+    align-items: center;
+    margin-right: 50px;
+}
+nav > .sidebar-header > .icon {
+    border-radius: 30px;
+}
 nav > .icon-list {
     flex-direction: column;
 }
