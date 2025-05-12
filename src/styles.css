@@ -17,6 +17,19 @@ nav > div {
     display: flex;
     gap: 10px;
 }
+nav > .icon-list {
+    flex-direction: column;
+}
+.nav-btn {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.5em;
+
+    font-size: 1rem;
+}
 main {
     display: flex;
     flex-direction: column;
