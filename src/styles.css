@@ -54,10 +54,23 @@ nav > .icon-list {
 nav > .user-projects {
     flex-grow: 1;
     gap: 0.5rem;
+    width: 100%;
+    align-items: center;
 }
-nav > .container > .user-projects > .project-header {
-    font-size: 1rem;
+nav .user-projects .project-header {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    font-size: 1.3rem;
 }
+nav .user-projects .project-header .add-project {
+    all: unset;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 5px;
+}  
 main {
     flex: 4;
 }
