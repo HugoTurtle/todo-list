@@ -3,19 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
-body > .container {
+.flex,
+.flex-col,
+.centered-flex {
     display: flex;
+}
+.flex-col {
+    flex-direction: column;
+}
+.centered-flex {
+    justify-content: center;
+    align-items: center;
+}
+body > .container {
     min-height: 100vh;
     padding: 15px 0px;
 }
 nav {
-    display: flex;
-    flex-direction: column;
     flex: 1;
     align-items: center;
 }
 nav > div {
-    display: flex;
     gap: 10px;
 }
 nav > .sidebar-header {
@@ -26,7 +34,7 @@ nav > .sidebar-header > .icon {
     border-radius: 30px;
 }
 nav > .icon-list {
-    flex-direction: column;
+    
 }
 .nav-btn {
     all: unset;
@@ -38,9 +46,13 @@ nav > .icon-list {
 
     font-size: 1rem;
 }
+nav > .container > .user-projects {
+
+}
+nav > .container > .user-projects > .project-header {
+    font-size: 1rem;
+}
 main {
-    display: flex;
-    flex-direction: column;
     flex: 4;
 }
 .icon {

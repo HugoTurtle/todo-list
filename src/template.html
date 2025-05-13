@@ -6,13 +6,13 @@
     <title>To-do List</title>
 </head>
 <body>
-    <div class = "container">
-        <nav id="sidebar">
-            <div class="sidebar-header container">
+    <div class = "container flex">
+        <nav id="sidebar" class="flex-col">
+            <div class="sidebar-header container flex">
                 <img src="./assets/images/blank-pfp.png" alt="blank profile picture" class="icon">
                 <h2>User</h2>
             </div>
-            <div class="container icon-list">
+            <div class="container icon-list flex-col">
                 <button class="nav-btn">
                     <img src="./assets/icons/inbox.svg" aria-hidden="true" alt="" class="icon">Inbox
                 </button>
@@ -26,8 +26,8 @@
                     <img src="./assets/icons/calendar_month.svg" aria-hidden="true" alt="" class="icon">Upcoming
                 </button>
             </div>
-            <div class="container">
-                <div class="user-projects">
+            <div class="container flex">
+                <div class="user-projects flex-col">
                     <div class="project-header container" >
                         <span>Projects</span>
                         <button class="add-project">+</button>
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </nav>
-        <main>
+        <main class="flex-col">
             <header>
                 <h1 class="header">Inbox</h1>
             </header>
