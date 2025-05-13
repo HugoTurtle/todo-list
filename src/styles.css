@@ -26,18 +26,18 @@ nav {
     padding: 1rem;
     gap: 1rem;
 }
-nav > div {
+nav div {
     gap: 10px;
 }
-nav > .sidebar-header {
+nav .sidebar-header {
     align-items: center;
     margin-right: 50px;
     flex-shrink: 0;
 }
-nav > .sidebar-header > .icon {
+nav .sidebar-header .icon {
     border-radius: 30px;
 }
-nav > .icon-list {
+nav .icon-list {
     flex-shrink: 0;
     gap: 0.5rem;
 }
@@ -51,7 +51,7 @@ nav > .icon-list {
 
     font-size: 1rem;
 }
-nav > .user-projects {
+nav .user-projects {
     flex-grow: 1;
     gap: 0.5rem;
     width: 100%;
