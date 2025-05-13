@@ -25,6 +25,7 @@ nav {
     justify-content: space-between;
     padding: 1rem;
     gap: 1rem;
+    max-width: 230px;
 }
 nav div {
     gap: 10px;
