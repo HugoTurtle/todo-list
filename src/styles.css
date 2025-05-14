@@ -105,6 +105,6 @@ button {
     border: none;
     cursor: pointer;
 }
-button:hover {
+nav button:hover {
     background-color: rgb(180, 50, 45);
 }
