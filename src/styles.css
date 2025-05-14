@@ -40,7 +40,7 @@ nav div {
 }
 nav .sidebar-header {
     align-items: center;
-    margin-right: 50px;
+    width: 200px;
     flex-shrink: 0;
 }
 nav .sidebar-header .icon {
