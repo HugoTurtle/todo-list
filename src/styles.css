@@ -51,9 +51,6 @@ nav .icon-list {
     gap: 0.5rem;
 }
 .nav-btn {
-    all: unset;
-    cursor: pointer;
-    display: flex;
     align-items: center;
     gap: 8px;
     padding: 0.5em;
