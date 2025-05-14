@@ -87,6 +87,7 @@ nav .user-projects .project-header .add-project {
 main {
     flex: 4;
     height: 100%;
+    padding: 9px 45px;
 }
 .icon {
     width: 30px;
