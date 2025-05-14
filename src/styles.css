@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --color-accent-red: rgb(211, 64, 53);
+    --color-background-light: rgb(244, 242, 240);
+}
 body, html {
     height: 100%;
 }
@@ -29,6 +33,7 @@ nav {
     gap: 1rem;
     max-width: 230px;
     height: 100%;
+    background-color: var(--color-accent-red);
 }
 nav div {
     gap: 10px;
@@ -88,6 +93,7 @@ main {
     flex: 4;
     height: 100%;
     padding: 9px 45px;
+    background-color: var(--color-background-light);
 }
 .icon {
     width: 30px;
