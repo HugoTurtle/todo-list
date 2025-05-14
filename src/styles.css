@@ -31,7 +31,7 @@ nav {
     justify-content: space-between;
     padding: 1rem;
     gap: 1rem;
-    max-width: 230px;
+    width: clamp(250px, 40vw, 350px);
     height: 100%;
     background-color: var(--color-accent-red);
 }
