@@ -67,7 +67,6 @@ nav .user-projects .project-header {
     font-size: 1.3rem;
 }
 nav .user-projects .project-header .add-project {
-    all: unset;
     cursor: pointer;
     padding: 4px 8px;
     border-radius: 5px;
@@ -78,4 +77,9 @@ main {
 .icon {
     width: 30px;
     height: auto;
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
