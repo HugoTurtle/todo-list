@@ -71,6 +71,16 @@ nav .user-projects .project-header .add-project {
     padding: 4px 8px;
     border-radius: 5px;
 }  
+.project {
+    width: 100%;
+    gap: 10px;
+}
+.project-btn {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1.1rem;
+}
 main {
     flex: 4;
 }
