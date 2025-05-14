@@ -78,6 +78,7 @@ nav .user-projects .project-header .add-project {
     cursor: pointer;
     padding: 4px 8px;
     border-radius: 5px;
+    font-size: 1.5rem;
 }  
 .project {
     width: 100%;
