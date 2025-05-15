@@ -12,4 +12,10 @@ export class Task {
         this.priorityLevel = priorityLevel;
         this.dueDate = dueDate;
     }
+    toggleCompleted() { 
+        this.completed = !this.completed;
+    }
+    isCompleted() {
+        return this.completed;
+    }
 }
