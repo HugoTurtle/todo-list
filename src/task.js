@@ -4,5 +4,6 @@ export class Task {
         this.description = description;
         this.priorityLevel = priorityLevel;
         this.dueDate = dueDate;
+        this.completed = false;
     }
 }
