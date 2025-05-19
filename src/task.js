@@ -18,4 +18,7 @@ export class Task {
     isCompleted() {
         return this.completed;
     }
+    displayTask() {
+        return `${title} ${description} ${priorityLevel} ${dueDate}`;
+    }
 }
