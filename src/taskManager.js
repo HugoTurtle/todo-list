@@ -7,7 +7,9 @@ export class TaskManager {
     }
     
     createTask(title, description, priorityLevel, dueDate) {
-        return new Task(title, description, priorityLevel, dueDate, this.nextId++);
+        const task = new Task(title, description, priorityLevel, dueDate, this.nextId++);
+        this.addTask(task);
+        return task;
     }
 
     addTask(task) {
