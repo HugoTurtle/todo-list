@@ -20,6 +20,6 @@ export class Task {
         return this.completed;
     }
     displayTask() {
-        return `${title} ${description} ${priorityLevel} ${dueDate}`;
+        return `${this.title} ${this.description} ${this.priorityLevel} ${this.dueDate}`;
     }
 }
