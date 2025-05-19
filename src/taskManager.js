@@ -8,4 +8,10 @@ export class TaskManager {
     addTask(task) {
         this.tasks.push(task);
     }
+    
+    displayTasks() {
+        for(const task of this.tasks) {
+            task.displayTask();
+        }
+    }
 }
