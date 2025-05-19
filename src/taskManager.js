@@ -16,7 +16,7 @@ export class TaskManager {
 
     displayTasks() {
         for(const task of this.tasks) {
-            task.displayTask();
+            console.log(task.displayTask());
         }
     }
 }
