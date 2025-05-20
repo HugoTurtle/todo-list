@@ -16,6 +16,13 @@ export class TaskManager {
         this.tasks.push(task);
     }
 
+    deleteTask(id) {
+        const index = this.tasks.findIndex(task => task.id === id);
+        if (index !== -1) {
+            this.tasks.splice(index, 1);
+        }
+    }
+
     displayTasks() {
         for(const task of this.tasks) {
             console.log(task.displayTask());
