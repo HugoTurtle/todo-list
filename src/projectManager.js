@@ -8,8 +8,12 @@ export class ProjectManager {
         this.projects.push(project);
         return project;
     }
-    
+
     getProjects() {
         return this.projects;
+    }
+
+    getProjectsById(id) {
+        return this.projects.find(project => project.id === id);
     }
 }
