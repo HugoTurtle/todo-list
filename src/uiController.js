@@ -1,4 +1,6 @@
 import { TaskManager } from "./taskManager";
+import deleteIcon from './assets/icons/deleteIcon.svg';
+import editIcon from './assets/icons/editIcon.svg'
 
 export function renderTask(tasks) {
     const taskContainer = document.getElementById('task-container');
@@ -17,7 +19,19 @@ export function renderTask(tasks) {
         const dueDate = document.createElement('p');
         dueDate.textContent = task.dueDate;
 
-        taskItem.append(title, description, dueDate);
+        const editButton = document.createElement('button');
+        const editImg = document.createElement('img');
+        editImg.src = editIcon;
+        editImg.alt = 'Edit';
+        editButton.append(editImg);
+
+        const deleteButton = document.createElement('button');
+        const deleteImg = document.createElement('img');
+        deleteImg.src = deleteIcon;
+        deleteImg.alt = 'Delete';
+        deleteButton.append(deleteImg);
+
+        taskItem.append(title, description, dueDate, editButton, deleteButton);
 
         taskContainer.append(taskItem);
     }
