@@ -8,4 +8,8 @@ export class ProjectManager {
         this.projects.push(project);
         return project;
     }
+    
+    getProjects() {
+        return this.projects;
+    }
 }
