@@ -28,4 +28,8 @@ export class TaskManager {
             console.log(task.displayTask());
         }
     }
+
+    getTasks() {
+        return this.tasks;
+    }
 }
