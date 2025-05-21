@@ -2,6 +2,7 @@ import { TaskManager } from "./taskManager";
 
 export function renderTask(tasks) {
     const taskContainer = document.getElementById('task-container');
+    taskContainer.innerHTML = '';
 
     for(const task of tasks) {
         const taskItem = document.createElement('div');
