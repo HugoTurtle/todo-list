@@ -6,4 +6,7 @@ export class Project {
     modifyProject(name) {
         this.name = name;
     }
+    displayProject() {
+        console.log(`Project Name : ${this.name}`);
+    }
 }
