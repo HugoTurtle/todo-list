@@ -19,4 +19,9 @@ export class ProjectManager {
     getProjectsById(id) {
         return this.projects.find(project => project.id === id);
     }
+    displayProjects() {
+        for(const project of this.projects) {
+            project.displayProject();
+        }
+    }
 }
