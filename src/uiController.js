@@ -39,6 +39,7 @@ export function renderTask(tasks) {
 
 export function renderProjects(projects) {
     const projectContainer = document.getElementById('project-container');
+    projectContainer.innerHTML = ``;
 
     for(const project of projects) {
         const projectButton = document.createElement('button');
