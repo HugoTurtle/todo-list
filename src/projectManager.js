@@ -4,6 +4,7 @@ export class ProjectManager {
     constructor() {
         this.projects = [];
         this.nextId = 0;
+        this.createProject('Default');
     }
 
     createProject(name) {
