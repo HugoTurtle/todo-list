@@ -1,10 +1,13 @@
+import { Project } from "./project";
+
 export class ProjectManager {
     constructor() {
         this.projects = [];
+        this.nextId = 0;
     }
 
     addProject(name) {
-        const project = {name, id};
+        const project = new Project(name, this.nextId++);
         this.projects.push(project);
         return project;
     }
