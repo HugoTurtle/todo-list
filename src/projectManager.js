@@ -6,10 +6,14 @@ export class ProjectManager {
         this.nextId = 0;
     }
 
-    addProject(name) {
+    createProject(name) {
         const project = new Project(name, this.nextId++);
-        this.projects.push(project);
+        this.addProject(project);
         return project;
+    }
+
+    addProject(project) {
+        this.projects.push(project);
     }
 
     getProjects() {
