@@ -3,4 +3,7 @@ export class Project {
         this.name = name;
         this.id = id;
     }
+    modifyProject(name) {
+        this.name = name;
+    }
 }
