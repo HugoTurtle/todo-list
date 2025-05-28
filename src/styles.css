@@ -130,3 +130,8 @@ dialog::backdrop {
 .form-group {
     padding: 20px 25px;
 }
+#form-group-header {
+    align-self: center;
+    border-bottom: 1px solid rgb(208, 208, 208);
+    background-color: var(--color-background-light);
+}
