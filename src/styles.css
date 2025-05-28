@@ -141,6 +141,17 @@ dialog::backdrop {
 #form-body label {
     font-size: 1.2rem;
 }
+#form-body input[type="text"] {
+    outline: none;
+    border: 1px solid rgb(208, 208, 208);
+    height: 45px;
+    padding: 10px 7px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+#form-body input[type="text"]:focus {
+    border-color: rgb(117, 117, 117);
+}
 #form-button-container {
     border-top: 1px solid rgb(208, 208, 208);
     gap: 5px;
