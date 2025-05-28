@@ -135,6 +135,9 @@ dialog::backdrop {
     border-bottom: 1px solid rgb(208, 208, 208);
     background-color: var(--color-background-light);
 }
+#form-body {
+    gap: 5px;
+}
 #form-button-container {
     border-top: 1px solid rgb(208, 208, 208);
     gap: 5px;
