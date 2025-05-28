@@ -5,7 +5,9 @@
 }
 :root {
     --color-accent-red: rgb(211, 64, 53);
-    --color-background-light: rgb(244, 242, 240);
+    --color-neutral-light: rgb(244, 242, 240);
+    --color-neutral-medium: rgb(208, 208, 208); 
+    --color-neutral-dark: rgb(186, 185, 184); 
 }
 body, html {
     height: 100%;
@@ -94,7 +96,7 @@ main {
     flex: 4;
     height: 100%;
     padding: 9px 45px;
-    background-color: var(--color-background-light);
+    background-color: var(--color-neutral-light);
 }
 .icon {
     width: 30px;
@@ -132,8 +134,8 @@ dialog::backdrop {
 }
 #form-group-header {
     align-self: center;
-    border-bottom: 1px solid rgb(208, 208, 208);
-    background-color: var(--color-background-light);
+    border-bottom: 1px solid var(--color-neutral-medium);
+    background-color: var(--color-neutral-light);
 }
 #form-body {
     gap: 5px;
@@ -143,7 +145,7 @@ dialog::backdrop {
 }
 #form-body input[type="text"] {
     outline: none;
-    border: 1px solid rgb(208, 208, 208);
+    border: 1px solid var(--color-neutral-medium);
     height: 45px;
     padding: 10px 7px;
     border-radius: 4px;
@@ -153,7 +155,7 @@ dialog::backdrop {
     border-color: rgb(117, 117, 117);
 }
 #form-button-container {
-    border-top: 1px solid rgb(208, 208, 208);
+    border-top: 1px solid var(--color-neutral-medium);
     gap: 5px;
     justify-content: end;
     align-items: center;
@@ -170,6 +172,6 @@ input[type="submit"] {
     border: 1px solid rgb(172, 28, 18);
 }
 input[type="button"] {
-    background-color: var(--color-background-light);
-    border: 1px solid rgb(186, 185, 184);
+    background-color: var(--color-neutral-light);
+    border: 1px solid var(--color-neutral-dark);
 }
