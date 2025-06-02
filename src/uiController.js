@@ -11,21 +11,26 @@ export function renderTask(tasks) {
         taskItem.classList.add('task-item');
 
         const title = document.createElement('p');
+        title.classList.add('task-title');
         title.textContent = task.title;
 
         const description = document.createElement('p');
+        description.classList.add('task-description');
         description.textContent = task.description;
 
         const dueDate = document.createElement('p');
+        dueDate.classList.add('task-due-date');
         dueDate.textContent = task.dueDate;
 
         const editButton = document.createElement('button');
+        editButton.classList.add('edit-button');
         const editImg = document.createElement('img');
         editImg.src = editIcon;
         editImg.alt = 'Edit';
         editButton.append(editImg);
 
         const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-button');
         const deleteImg = document.createElement('img');
         deleteImg.src = deleteIcon;
         deleteImg.alt = 'Delete';
