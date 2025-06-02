@@ -31,7 +31,11 @@ export function renderTask(tasks) {
         deleteImg.alt = 'Delete';
         deleteButton.append(deleteImg);
 
-        taskItem.append(title, description, dueDate, editButton, deleteButton);
+        const buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('container');
+        buttonContainer.append(editButton, deleteButton);
+
+        taskItem.append(title, description, dueDate, buttonContainer);
 
         taskContainer.append(taskItem);
     }
