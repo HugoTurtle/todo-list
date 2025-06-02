@@ -68,7 +68,7 @@ export function renderProjects(projects) {
     }
 }
 export function addTaskButton() {
-    const taskContainer = document.getElementById(task-container);
+    const taskContainer = document.getElementById('task-container');
     
     const addTask = document.createElement('button');
     addTask.classList.add('add-task-button');
