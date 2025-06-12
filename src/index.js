@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = document.getElementById('task-name').value;
         const description = document.getElementById('description').value;
         const priorityLevel = document.getElementById('priority-status').value;
-        const dueDate = 0;
+        const dueDate = document.getElementById('date-picker').value;
         tasks.createTask(title, description, priorityLevel, dueDate);
         renderTask(tasks.getTasks());
         taskDialog.close();
