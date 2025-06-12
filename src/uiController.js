@@ -68,13 +68,13 @@ export function renderProjects(projects) {
     }
 }
 export function addTaskButton() {
-    const taskContainer = document.getElementById('task-container');
+    const main = document.querySelector('main');
     
     const addTask = document.createElement('button');
     addTask.classList.add('add-task-button');
     addTask.textContent = 'Add Task';
 
-    taskContainer.append(addTask);
+    main.append(addTask);
 
     return addTask;
 }
