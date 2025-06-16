@@ -34,5 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTask(tasks.getTasks());
         taskDialog.close();
     })
+
+    taskDialog.querySelector(".cancel").addEventListener("click", () => {
+        taskDialog.close();
+    });
+
 });
 
