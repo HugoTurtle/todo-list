@@ -175,3 +175,22 @@ input[type="button"] {
     background-color: var(--color-neutral-light);
     border: 1px solid var(--color-neutral-dark);
 }
+#task-container {
+    margin: 25px 10px;
+    gap: 15px;
+}
+.task-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 0.5fr 0.5fr;
+    align-items: center;
+    padding: 5px 0px;
+    border-bottom: 1px solid var(--color-neutral-dark);
+}
+.task-item .task-title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+#task-container .container {
+    display: flex;
+    justify-content: space-evenly;
+}
