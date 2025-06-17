@@ -132,18 +132,18 @@ dialog::backdrop {
 .form-group {
     padding: 20px 25px;
 }
-#form-group-header {
+.form-group-header {
     align-self: center;
     border-bottom: 1px solid var(--color-neutral-medium);
     background-color: var(--color-neutral-light);
 }
-#form-body {
+.form-body {
     gap: 5px;
 }
-#form-body label {
+.form-body label {
     font-size: 1.2rem;
 }
-#form-body input[type="text"] {
+.form-body input[type="text"] {
     outline: none;
     border: 1px solid var(--color-neutral-medium);
     height: 45px;
@@ -151,10 +151,10 @@ dialog::backdrop {
     border-radius: 4px;
     font-size: 1rem;
 }
-#form-body input[type="text"]:focus {
+.form-body input[type="text"]:focus {
     border-color: rgb(117, 117, 117);
 }
-#form-button-container {
+.form-button-container {
     border-top: 1px solid var(--color-neutral-medium);
     gap: 5px;
     justify-content: end;
