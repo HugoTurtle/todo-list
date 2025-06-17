@@ -7,9 +7,30 @@ import { renderTask } from "./uiController";
 import { parse, format, parseISO } from "date-fns";
 
 document.addEventListener('DOMContentLoaded', () => {
+    //Project Functionality
     const projects = new ProjectManager();
     renderProjects(projects.getProjects());
 
+    const addProjectButton = document.getElementById('add-project-btn');
+    const projectDialog = document.getElementById('dialog');
+    const projectForm = document.getElementById('dialog-form');
+
+    addProjectButton.addEventListener('click', function() {
+        projectDialog.showModal();
+    })
+
+    projectForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const title = document.getElementById('title').value;
+        projects.createProject(title);
+        
+        renderProjects(projects.getProjects());
+        projectDialog.close();
+    })
+
+
+    //Task Functionality
     const taskDialog = document.getElementById('task-dialog');
     const addTaskBtn = addTaskButton();
 
