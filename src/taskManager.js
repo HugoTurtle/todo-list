@@ -1,5 +1,5 @@
 import { Task } from "./task";
-import {format} from "date-fns";
+import {format, isAfter} from "date-fns";
 
 export class TaskManager {
     constructor() {
@@ -33,5 +33,9 @@ export class TaskManager {
 
     getTasks() {
         return this.tasks;
+    }
+
+    getFutureTasks() {
+        return this.tasks.filter(task => isAfter(task.getDate(), this.today));
     }
 }
