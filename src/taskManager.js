@@ -1,9 +1,11 @@
 import { Task } from "./task";
+import {format} from "date-fns";
 
 export class TaskManager {
     constructor() {
         this.tasks = [];
         this.nextId = 0;
+        this.today = format(new Date(), 'MM/dd/yyyy'); 
     }
     
     createTask(title, description, priorityLevel, dueDate) {
