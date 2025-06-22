@@ -34,12 +34,16 @@ export class TaskManager {
     getTasks() {
         return this.tasks;
     }
-
+    
     getCurrentDateTasks() {
         return this.tasks.filter(task => isEqual(this.today, task.getDate()));
     }
-    
+
     getFutureTasks() {
         return this.tasks.filter(task => isAfter(task.getDate(), this.today));
+    }
+
+    getUserProjectTasks(userProject) {
+        return this.tasks.filter(task => task.getProject() === userProject);
     }
 }
