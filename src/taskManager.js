@@ -34,7 +34,7 @@ export class TaskManager {
     getTasks() {
         return this.tasks;
     }
-    
+
     getCurrentDateTasks() {
         return this.tasks.filter(task => isEqual(this.today, task.getDate()));
     }
@@ -45,5 +45,16 @@ export class TaskManager {
 
     getUserProjectTasks(userProject) {
         return this.tasks.filter(task => task.getProject() === userProject);
+    }
+
+    getImportantTasks() {
+        const priorityMap = {
+            'Low' : 0,
+            'Medium' : 1,
+            'High' : 2,
+        }
+        return this.tasks.toSorted((a,b) => {
+            priorityMap[a.getPriorityLevel()] - priorityMap[b.getPriorityLevel()];
+        })
     }
 }
