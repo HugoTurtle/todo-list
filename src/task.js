@@ -29,4 +29,7 @@ export class Task {
     getProject() {
         return this.project;
     }
+    getPriorityLevel() {
+        return this.priorityLevel;
+    }
 }
