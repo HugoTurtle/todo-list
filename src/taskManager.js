@@ -69,7 +69,7 @@ export class TaskManager {
             'high' : 2,
         }
         return this.tasks.toSorted((a,b) => {
-            return priorityMap[a.getPriorityLevel()] - priorityMap[b.getPriorityLevel()];
+            return priorityMap[b.getPriorityLevel()] - priorityMap[a.getPriorityLevel()];
         })
     }
 }
