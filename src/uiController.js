@@ -78,3 +78,8 @@ export function addTaskButton() {
 
     return addTask;
 }
+export function updateHeader(state) {
+    const header = document.querySelector('.header');
+
+    header.textContent = state;
+}
