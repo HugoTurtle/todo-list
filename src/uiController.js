@@ -53,16 +53,8 @@ export function renderProjects(projects) {
     for(const project of projects) {
         const projectButton = document.createElement('button');
         projectButton.classList.add('project-btn');
-
-        const projectIcon = document.createElement('span');
-        projectIcon.textContent = '#';
-
-        projectButton.append(projectIcon);
-
-        const projectName = document.createElement('p');
-        projectName.textContent = project.name;
-
-        projectButton.append(projectName);
+        
+        projectButton.textContent = project.name;
 
         projectContainer.append(projectButton);
     }

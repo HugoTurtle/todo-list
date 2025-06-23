@@ -86,11 +86,14 @@ nav .user-projects .project-header .add-project {
 }
 .project-btn {
     display: flex;
-    justify-content: center;
+    margin-left: 35px;
     gap: 8px;
     font-size: 1.1rem;
     border-radius: 10px;
     padding: 10px;
+}
+.project-btn::before {
+    content: '#';
 }
 main {
     flex: 4;
