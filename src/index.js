@@ -1,6 +1,6 @@
 import "./styles.css";
 import { ProjectManager } from "./projectManager";
-import { renderProjects } from "./uiController";
+import { renderProjects, updateHeader } from "./uiController";
 import { addTaskButton } from "./uiController";
 import { TaskManager } from "./taskManager";
 import { renderTask } from "./uiController";
@@ -59,6 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
     taskDialog.querySelector(".cancel").addEventListener("click", () => {
         taskDialog.close();
     });
+    
+    // State Functionality
+    const parentElement = document.getElementById('sidebar');
+
+    parentElement.addEventListener('click', (e) => {
+        const stateOfPage = e.target.textContent.trim();
+        if(e.target.classList.contains('nav-btn') || e.target.classList.contains('project-btn')) {
+            updateHeader(stateOfPage);
+            renderTask(tasks.sortTasks(stateOfPage));
+        }
+    })
 
 });
 
