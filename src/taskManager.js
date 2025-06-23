@@ -7,7 +7,22 @@ export class TaskManager {
         this.nextId = 0;
         this.today = format(new Date(), 'MM/dd/yyyy'); 
     }
-    
+
+    sortTasks(state) {
+        switch(state) {
+            case 'Inbox': 
+                return this.getTasks();
+            case 'Important':
+                return this.getImportantTasks();
+            case 'Today':
+                return this.getCurrentDateTasks();
+            case 'Upcoming': 
+                return this.getFutureTasks();
+            default: 
+                return this.getUserProjectTasks(state); 
+        }
+    }
+
     createTask(title, description, priorityLevel, dueDate) {
         const task = new Task(title, description, priorityLevel, dueDate, this.nextId++);
         this.addTask(task);
