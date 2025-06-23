@@ -49,12 +49,12 @@ export class TaskManager {
 
     getImportantTasks() {
         const priorityMap = {
-            'Low' : 0,
-            'Medium' : 1,
-            'High' : 2,
+            'low' : 0,
+            'medium' : 1,
+            'high' : 2,
         }
         return this.tasks.toSorted((a,b) => {
-            priorityMap[a.getPriorityLevel()] - priorityMap[b.getPriorityLevel()];
+            return priorityMap[a.getPriorityLevel()] - priorityMap[b.getPriorityLevel()];
         })
     }
 }
