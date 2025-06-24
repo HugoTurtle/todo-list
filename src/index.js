@@ -52,14 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const formattedDate = format((parsedDate), "MM/dd/yyyy");
         
         tasks.createTask(title, description, priorityLevel, formattedDate);
-        renderTask(tasks.getTasks());
+        const currentState = document.querySelector('.header').textContent;
+        renderTask(tasks.sortTasks(currentState));
         taskDialog.close();
     })
 
     taskDialog.querySelector(".cancel").addEventListener("click", () => {
         taskDialog.close();
     });
-    
+
     // State Functionality
     const parentElement = document.getElementById('sidebar');
 
