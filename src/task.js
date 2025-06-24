@@ -8,7 +8,7 @@ export class Task {
         this.id = id;
         this.project = project;
     }
-    modifyTask(title = this.title, description = this.description, priorityLevel = this.priorityLevel, dueDate = this.dueDate) {
+    modifyTask(title = this.title, description = this.description, priorityLevel = this.priorityLevel, dueDate = this.dueDate, project = this.project) {
         this.title = title;
         this.description = description;
         this.priorityLevel = priorityLevel;
