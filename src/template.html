@@ -100,5 +100,43 @@
             </div>
         </form>
     </dialog>
+    <dialog id="edit-task-dialog">
+        <form method="dialog" id="edit-task-form">
+            <div class="form-group flex-col form-group-header">
+                <h1>Edit Task</h1>
+            </div>
+            <div class="container form-body">
+                <div class="form-group flex-col task-name-form">
+                    <label for="edit-task-name">Task Name: </label>
+                    <input type="text" name="task-name" id="edit-task-name">
+                </div>
+                <div class="form-group flex-col task-description-form">
+                    <label for="edit-description">Description: </label>
+                    <input type="text" name="description" id="edit-description">
+                </div>
+                <div class="form-group flex task-due-date-form">
+                    <label for="edit-date-picker">Due Date:</label>
+                    <input type="date" name="date-picker" id="edit-date-picker">
+                </div>
+                <div class="form-group flex task-priority-form">
+                    <label for="edit-priority-status">Priority:</label>
+                    <select name="priority-status" id="edit-priority-status">
+                        <option value="" disabled selected>Select Priority</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group flex-col task-user-project-form">
+                    <label for="edit-project-select">Project</label>
+                    <select name="projects" id="edit-project-select"></select>
+                </div>
+            </div>
+            <div class="form-group flex form-button-container">
+                <input type="button" value="Cancel" class="cancel">
+                <input type="submit" value="Save Changes">
+            </div>
+        </form>
+    </dialog>
 </body>
 </html>
