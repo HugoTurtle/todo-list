@@ -4,7 +4,7 @@ import { renderProjects, updateHeader } from "./uiController";
 import { addTaskButton } from "./uiController";
 import { TaskManager } from "./taskManager";
 import { renderTask } from "./uiController";
-import { parse, format, parseISO } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 document.addEventListener('DOMContentLoaded', () => {
     //Project Functionality
