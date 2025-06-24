@@ -9,4 +9,7 @@ export class Project {
     displayProject() {
         console.log(`Project Name : ${this.name}`);
     }
+    getProjectName() {
+        return this.name;
+    }
 }
