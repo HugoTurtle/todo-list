@@ -75,3 +75,11 @@ export function updateHeader(state) {
 
     header.textContent = state;
 }
+export function updateProjectOptions(projects) {
+    const selectElement = document.getElementById('project-select');
+    selectElement.innerHTML = '';
+    for(const project of projects) {
+        const newProjectOption = new Option(project.getProjectName(), project.getProjectName());
+        selectElement.add(newProjectOption);
+    }
+}
