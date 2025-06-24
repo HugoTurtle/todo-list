@@ -1,6 +1,6 @@
 import "./styles.css";
 import { ProjectManager } from "./projectManager";
-import { renderProjects, updateHeader } from "./uiController";
+import { renderProjects, updateHeader, updateProjectOptions } from "./uiController";
 import { addTaskButton } from "./uiController";
 import { TaskManager } from "./taskManager";
 import { renderTask } from "./uiController";
@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const title = document.getElementById('title').value;
         projects.createProject(title);
+
+        updateProjectOptions(projects.getProjects());
         
         renderProjects(projects.getProjects());
         projectDialog.close();
