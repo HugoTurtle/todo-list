@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Project Functionality
     const projects = new ProjectManager();
     renderProjects(projects.getProjects());
+    updateProjectOptions(projects.getProjects());
 
     const addProjectButton = document.getElementById('add-project-btn');
     const projectDialog = document.getElementById('dialog');
@@ -52,8 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const dueDate = document.getElementById('date-picker').value;
         const parsedDate = parseISO(dueDate);
         const formattedDate = format((parsedDate), "MM/dd/yyyy");
+
+        const selectElement = document.getElementById('project-select');
+        const userProject = selectElement.value;
         
-        tasks.createTask(title, description, priorityLevel, formattedDate);
+        tasks.createTask(title, description, priorityLevel, formattedDate, userProject);
         const currentState = document.querySelector('.header').textContent;
         renderTask(tasks.sortTasks(currentState));
         taskDialog.close();
