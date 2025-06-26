@@ -32,4 +32,7 @@ export class Task {
     getPriorityLevel() {
         return this.priorityLevel;
     }
+    getID() {
+        return this.id;
+    }
 }
