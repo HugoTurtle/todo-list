@@ -41,6 +41,8 @@ export function renderTask(tasks) {
         buttonContainer.append(editButton, deleteButton);
 
         taskItem.append(title, description, dueDate, buttonContainer);
+        
+        taskItem.setAttribute('id', `${task.getID()}`)
 
         taskContainer.append(taskItem);
     }
