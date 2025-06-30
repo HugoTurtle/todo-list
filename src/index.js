@@ -85,6 +85,25 @@ document.addEventListener('DOMContentLoaded', () => {
             modifyTaskDialog.showModal();
         }
     })
+    modifyTaskDialog.addEventListener('submit', (e) => {
+        e.preventDefault();
+   
+        const title = document.getElementById('edit-task-name').value;
+        const description = document.getElementById('edit-description').value;
+        const priorityLevel = document.getElementById('edit-priority-status').value;
+   
+        const dueDate = document.getElementById('edit-date-picker').value;
+        const parsedDate = parseISO(dueDate);
+        const formattedDate = format((parsedDate), "MM/dd/yyyy");
+   
+        const selectElement = document.getElementById('edit-project-select');
+        const userProject = selectElement.value;
+           
+        taskToModify.modifyTask(title, description, priorityLevel, formattedDate, userProject);
+        const currentState = document.querySelector('.header').textContent;
+        renderTask(tasks.sortTasks(currentState));
+        modifyTaskDialog.close();
+    })
     modifyTaskDialog.querySelector('.cancel').addEventListener('click', () => {
         modifyTaskDialog.close();
     })
