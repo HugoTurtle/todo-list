@@ -186,7 +186,8 @@ input[type="button"] {
     margin: 25px 10px;
     gap: 15px;
 }
-#task-dialog .form-body {
+#task-dialog .form-body,
+#edit-task-dialog .form-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
