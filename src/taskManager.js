@@ -39,6 +39,9 @@ export class TaskManager {
             this.tasks.splice(index, 1);
         }
     }
+    findTaskById(id) {
+        return this.tasks.find(task => task.getID() === id);
+    }
 
     displayTasks() {
         for(const task of this.tasks) {
