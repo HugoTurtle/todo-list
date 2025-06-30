@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         projects.createProject(title);
 
         updateProjectOptions(projects.getProjects());
+        updateProjectOptions(projects.getProjects(), 'edit-project-select');
         
         renderProjects(projects.getProjects());
         projectDialog.close();
@@ -66,6 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
     taskDialog.querySelector(".cancel").addEventListener("click", () => {
         taskDialog.close();
     });
+
+    //Task Editing Functionality
+    const taskContainer = document.getElementById('task-container');
+    const modifyTaskDialog = document.getElementById('edit-task-dialog');
+    let taskToModify = null;
+    taskContainer.addEventListener('click', (e) => {
+        if(e.target.matches('.edit-button img')) {
+            const taskElement = e.target.closest('.task-item'); 
+            taskToModify = tasks.findTaskById(Number(taskElement.getAttribute(`id`)));
+            document.getElementById('edit-task-name').value = taskToModify.getTitle();
+            document.getElementById('edit-description').value = taskToModify.getDescription();
+            document.getElementById('edit-date-picker').value = format(taskToModify.getDate(), 'yyyy-MM-dd');
+            document.getElementById('edit-priority-status').value = taskToModify.getPriorityLevel();
+            updateProjectOptions(projects.getProjects(), 'edit-project-select');
+            document.getElementById('edit-project-select').value = taskToModify.getProject();
+            modifyTaskDialog.showModal();
+        }
+    })
+    modifyTaskDialog.querySelector('.cancel').addEventListener('click', () => {
+        modifyTaskDialog.close();
+    })
 
     // State Functionality
     const parentElement = document.getElementById('sidebar');
