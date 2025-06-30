@@ -77,8 +77,8 @@ export function updateHeader(state) {
 
     header.textContent = state;
 }
-export function updateProjectOptions(projects) {
-    const selectElement = document.getElementById('project-select');
+export function updateProjectOptions(projects, selectId = 'project-select') {
+    const selectElement = document.getElementById(selectId);
     selectElement.innerHTML = '';
     for(const project of projects) {
         const newProjectOption = new Option(project.getProjectName(), project.getProjectName());
