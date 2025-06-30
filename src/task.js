@@ -13,6 +13,7 @@ export class Task {
         this.description = description;
         this.priorityLevel = priorityLevel;
         this.dueDate = dueDate;
+        this.project = project;
     }
     toggleCompleted() { 
         this.completed = !this.completed;
