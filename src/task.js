@@ -23,6 +23,12 @@ export class Task {
     displayTask() {
         return `${this.title} ${this.description} ${this.priorityLevel} ${this.dueDate}`;
     }
+    getTitle() {
+        return this.title;
+    }
+    getDescription() {
+        return this.description;
+    }
     getDate() {
         return this.dueDate;
     }
