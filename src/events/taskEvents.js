@@ -38,7 +38,7 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
     taskContainer.addEventListener('click', (e) => {
         if(!e.target.matches('.edit-button img')) return;
         
-        const taskElement = e.target.closest('.task-form');
+        const taskElement = e.target.closest('.task-item');
         taskToModify = tasks.findTaskById(Number(taskElement.getAttribute('id')));
 
         document.getElementById('edit-task-name').value = taskToModify.getTitle();
