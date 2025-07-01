@@ -1,8 +1,7 @@
 import {format, parseISO} from 'date-fns'
 
-export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions) {
+export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions, addTaskBtn) {
     const taskDialog = document.getElementById('task-dialog');
-    const addTaskBtn = document.querySelector('.add-task-button');
     const taskForm = document.getElementById('task-form');
 
     const taskContainer = document.getElementById('task-container');
