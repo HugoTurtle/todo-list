@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Initial render
     renderProjects(projects.getProjects());
     renderTask(tasks.getTasks());
+    updateProjectOptions(projects.getProjects());
 
     //Initialize event handlers
     const addTaskBtn = addTaskButton();
