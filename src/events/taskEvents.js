@@ -70,6 +70,19 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
         modifyTaskDialog.close();
     });
 
+    //Handle deleting task
+    taskContainer.addEventListener('click', (e) => {
+        if(!e.target.matches('.delete-button img')) return;
+
+        const taskElement = e.target.closest('.task-item');
+        const taskIndex = Number(taskElement.getAttribute('id'));
+        
+        tasks.deleteTask(taskIndex);
+
+        const currentState = document.querySelector('.header').textContent;
+        renderTask(tasks.sortTasks(currentState));
+    })
+
     //Cancel buttons
     taskDialog.querySelector('.cancel').addEventListener('click', () => {
         taskDialog.close();
