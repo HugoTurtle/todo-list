@@ -201,7 +201,7 @@ input[type="button"] {
 }
 .task-item {
     display: grid;
-    grid-template-columns: 2fr 1fr 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr 2fr 1fr 0.5fr 0.5fr;
     align-items: center;
     padding: 5px 0px;
     border-bottom: 1px solid var(--color-neutral-dark);
@@ -228,3 +228,33 @@ input[type="button"] {
     grid-row: 1/2;
     grid-column: 2/3;
 }
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+  }
+  
+  .task-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-neutral-dark);
+    border-radius: 50%;
+    display: inline-block;
+    background-color: var(--color-neutral-light);
+    transition: background-color 0.2s ease;
+  }
+  
+  .task-toggle:checked + .custom-checkbox {
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+  
+  

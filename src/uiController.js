@@ -10,6 +10,18 @@ export function renderTask(tasks) {
         const taskItem = document.createElement('div');
         taskItem.classList.add('task-item');
 
+        const checkboxWrapper = document.createElement('label');
+        checkboxWrapper.classList.add('checkbox-wrapper');
+        
+        const checkboxInput = document.createElement('input');
+        checkboxInput.type = 'checkbox';
+        checkboxInput.classList.add('task-toggle');
+        
+        const customCircle = document.createElement('span');
+        customCircle.classList.add('custom-checkbox');
+        
+        checkboxWrapper.append(checkboxInput, customCircle);
+
         const title = document.createElement('p');
         title.classList.add('task-title');
         title.textContent = task.title;
@@ -40,7 +52,7 @@ export function renderTask(tasks) {
         buttonContainer.classList.add('container');
         buttonContainer.append(editButton, deleteButton);
 
-        taskItem.append(title, description, dueDate, buttonContainer);
+        taskItem.append(checkboxWrapper, title, description, dueDate, buttonContainer);
         
         taskItem.setAttribute('id', `${task.getID()}`)
 
