@@ -12,4 +12,7 @@ export class Project {
     getProjectName() {
         return this.name;
     }
+    getID() {
+        return this.id;
+    }
 }
