@@ -71,12 +71,22 @@ export function renderProjects(projects) {
     projectContainer.innerHTML = ``;
 
     for(const project of projects) {
+        const projectTab = document.createElement('div');
+        projectTab.classList.add('project-tab');
+    
         const projectButton = document.createElement('button');
-        projectButton.classList.add('project-btn');
-        
+        projectButton.classList.add('project-button');
+        projectButton.setAttribute('data-project-id', project.getID());
+        projectButton.setAttribute('aria-label', `Open project ${project.name}`);
         projectButton.textContent = project.name;
 
-        projectContainer.append(projectButton);
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-button');
+        deleteButton.setAttribute('aria-label', `Delete project ${project.name}`);
+        deleteButton.textContent = '×'; 
+
+        projectTab.append(projectButton, deleteButton);
+        projectContainer.append(projectTab);
     }
 }
 export function addTaskButton() {
