@@ -83,6 +83,19 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
         renderTask(tasks.sortTasks(currentState));
     })
 
+    //Handle task completion
+    taskContainer.addEventListener('change', (e) => {
+        if (e.target.matches('.task-toggle')) {
+          const checkboxInput = e.target;
+
+          const taskItem = checkboxInput.closest('.task-item');
+          taskToModify = tasks.findTaskById(Number(taskItem.getAttribute('id')));
+          taskToModify.setCompleted(checkboxInput.checked);
+
+          taskItem.classList.toggle('completed', checkboxInput.checked);
+        }
+      });
+      
     //Cancel buttons
     taskDialog.querySelector('.cancel').addEventListener('click', () => {
         taskDialog.close();
