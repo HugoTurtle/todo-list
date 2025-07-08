@@ -112,11 +112,10 @@ nav .user-projects .project-header .add-project {
 
 .project-btn {
   display: flex;
-  margin-left: 35px;
   gap: 8px;
   font-size: 1.1rem;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 .project-btn::before {
