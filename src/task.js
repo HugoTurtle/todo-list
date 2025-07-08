@@ -18,6 +18,9 @@ export class Task {
     toggleCompleted() { 
         this.completed = !this.completed;
     }
+    setCompleted(value) {
+        this.completed = value;
+    }
     isCompleted() {
         return this.completed;
     }
