@@ -1,12 +1,12 @@
 export class Task {
-    constructor(title, description, priorityLevel, dueDate, project, id) {
+    constructor(title, description, priorityLevel, dueDate, project, id, completed = false) {
         this.title = title;
         this.description = description;
         this.priorityLevel = priorityLevel;
         this.dueDate = dueDate;
-        this.completed = false;
         this.id = id;
         this.project = project;
+        this.completed = completed;
     }
     modifyTask(title = this.title, description = this.description, priorityLevel = this.priorityLevel, dueDate = this.dueDate, project = this.project) {
         this.title = title;
