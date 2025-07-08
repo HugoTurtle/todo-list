@@ -10,6 +10,10 @@ export function renderTask(tasks) {
         const taskItem = document.createElement('div');
         taskItem.classList.add('task-item');
 
+        if(task.isCompleted()) {
+            taskItem.classList.add('completed');   
+        }
+
         const checkboxWrapper = document.createElement('label');
         checkboxWrapper.classList.add('checkbox-wrapper');
         
@@ -20,6 +24,8 @@ export function renderTask(tasks) {
         const customCircle = document.createElement('span');
         customCircle.classList.add('custom-checkbox');
         
+        checkboxInput.checked = task.isCompleted();
+
         checkboxWrapper.append(checkboxInput, customCircle);
 
         const title = document.createElement('p');
