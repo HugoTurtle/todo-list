@@ -1,6 +1,6 @@
 
 
-export function initProjectEvents(projects, renderProjects, updateProjectOptions) {
+export function initProjectEvents(projects, renderProjects, updateProjectOptions, updateHeader, renderTask, tasks) {
     const addProjectButton = document.getElementById('add-project-btn');
     const projectDialog = document.getElementById('dialog');
     const projectForm = document.getElementById('dialog-form');
@@ -42,6 +42,10 @@ export function initProjectEvents(projects, renderProjects, updateProjectOptions
         renderProjects(allProjects);
         updateProjectOptions(allProjects);
         updateProjectOptions(allProjects, 'edit-project-select');
+
+        //Return to inbox state
+        updateHeader('Inbox');
+        renderTask(tasks.sortTasks('Inbox'));
     })
 
     //Cancel button

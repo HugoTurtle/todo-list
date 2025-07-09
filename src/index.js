@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Initialize event handlers
     const addTaskBtn = addTaskButton();
-    initProjectEvents(projects, renderProjects, updateProjectOptions);
+    initProjectEvents(projects, renderProjects, updateProjectOptions, updateHeader, renderTask, tasks);
     initTaskEvents(tasks, projects, renderTask, updateProjectOptions,addTaskBtn);
     initStateHandler(tasks, renderTask, updateHeader);
     
