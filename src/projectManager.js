@@ -32,6 +32,9 @@ export class ProjectManager {
     }
 
     deleteProject(id) {
-        this.projects = this.projects.filter(project => project.id !== id);
+        const index = this.projects.findIndex(project => project.getID() === id);
+        if (index !== -1) {
+            this.projects.splice(index, 1);
+        }
     }
 }
