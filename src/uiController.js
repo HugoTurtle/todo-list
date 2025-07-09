@@ -73,10 +73,12 @@ export function renderProjects(projects) {
     for(const project of projects) {
         const projectTab = document.createElement('div');
         projectTab.classList.add('project-tab');
-    
+        projectTab.setAttribute('data-project-id', project.getID());
+
         const projectButton = document.createElement('button');
         projectButton.classList.add('project-btn');
-        projectButton.setAttribute('data-project-id', project.getID());
+
+        
         projectButton.setAttribute('aria-label', `Open project ${project.name}`);
         projectButton.textContent = project.name;
 
