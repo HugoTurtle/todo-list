@@ -98,11 +98,26 @@ nav .user-projects .project-header {
   font-size: 1.3rem;
 }
 
-nav .user-projects .project-header .add-project {
+nav .user-projects .project-header .add-project,
+button.add-task-button::before {
   cursor: pointer;
   padding: 4px 8px;
   border-radius: 5px;
   font-size: 1.5rem;
+}
+
+.add-task-button::before {
+  content: '+';
+}
+
+.add-task-button {
+  display: flex;
+  padding: 5px 10px;
+  gap: 10px;
+  font-size: 1rem;
+  text-align: left;
+  border-radius: 10px;
+  align-items: center;
 }
 
 .project {
