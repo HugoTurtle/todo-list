@@ -121,6 +121,7 @@ nav .user-projects .project-header .add-project {
   height: 100%;
   width: 100%;
   padding: 10px 20px;
+  border-radius: 10px;
 }
 button.delete-button {
   display: inline;
