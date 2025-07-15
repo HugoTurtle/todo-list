@@ -3,6 +3,12 @@ export class Project {
         this.name = name;
         this.id = id;
     }
+    static fromJSON(obj) {
+        return new Project(
+            obj.name,
+            obj.id
+        )
+    }
     modifyProject(name) {
         this.name = name;
     }
