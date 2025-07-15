@@ -1,4 +1,5 @@
 import {format, parseISO} from 'date-fns'
+import { saveTasks } from '../storage';
 
 export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions, addTaskBtn) {
     const taskDialog = document.getElementById('task-dialog');
@@ -9,6 +10,8 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
     const modifyForm = modifyTaskDialog.querySelector('form');
     
     let taskToModify = null;
+
+    const syncTasks = () => saveTasks(tasks.getTasks());
 
     //Open task creation modal
     addTaskBtn.addEventListener('click', () => {
@@ -29,6 +32,8 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
         
         tasks.createTask(title, description, priorityLevel, formattedDate, userProject);
 
+        syncTasks();
+        
         const currentState = document.querySelector('.header').textContent;
         renderTask(tasks.sortTasks(currentState));
         taskDialog.close();
@@ -65,6 +70,8 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
            
         taskToModify.modifyTask(title, description, priorityLevel, formattedDate, userProject);
 
+        syncTasks();
+        
         const currentState = document.querySelector('.header').textContent;
         renderTask(tasks.sortTasks(currentState));
         modifyTaskDialog.close();
@@ -79,6 +86,8 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
         
         tasks.deleteTask(taskIndex);
 
+        syncTasks();
+
         const currentState = document.querySelector('.header').textContent;
         renderTask(tasks.sortTasks(currentState));
     })
@@ -91,6 +100,8 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
           const taskItem = checkboxInput.closest('.task-item');
           taskToModify = tasks.findTaskById(Number(taskItem.getAttribute('id')));
           taskToModify.setCompleted(checkboxInput.checked);
+
+          syncTasks();
 
           taskItem.classList.toggle('completed', checkboxInput.checked);
         }
