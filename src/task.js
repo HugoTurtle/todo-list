@@ -8,6 +8,17 @@ export class Task {
         this.project = project;
         this.completed = completed;
     }
+    static fromJSON(obj) {
+        return new Task(
+            obj.title,
+            obj.description,
+            obj.priorityLevel,
+            obj.dueDate,
+            obj.project,
+            obj.id,
+            obj.completed
+        )
+    }
     modifyTask(title = this.title, description = this.description, priorityLevel = this.priorityLevel, dueDate = this.dueDate, project = this.project) {
         this.title = title;
         this.description = description;
