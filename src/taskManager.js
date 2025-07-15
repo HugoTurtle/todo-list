@@ -75,4 +75,13 @@ export class TaskManager {
             return priorityMap[b.getPriorityLevel()] - priorityMap[a.getPriorityLevel()];
         })
     }
+    loadTasksFromStorage(taskObjects) {
+        this.tasks = taskObjects.map(obj => Task.fromJSON(obj));
+
+        const maxId = this.tasks.reduce((max, task) => {
+            return task.getID() > max ? task.getID() : max;
+        }, -1);
+
+        this.nextId = maxId + 1;
+    }
 }
