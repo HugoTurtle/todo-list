@@ -1,4 +1,4 @@
-
+import { saveProjects } from "../storage";
 
 export function initProjectEvents(projects, renderProjects, updateProjectOptions, updateHeader, renderTask, tasks) {
     const addProjectButton = document.getElementById('add-project-btn');
@@ -6,8 +6,8 @@ export function initProjectEvents(projects, renderProjects, updateProjectOptions
     const projectForm = document.getElementById('dialog-form');
 
     const projectContainer = document.getElementById('project-container');
-    
-    const allProjects = projects.getProjects();
+
+    const syncProjects = () =>  saveProjects(projects.getProjects());
 
     //Open project creation modal
     addProjectButton.addEventListener('click', () => {
@@ -21,10 +21,12 @@ export function initProjectEvents(projects, renderProjects, updateProjectOptions
         const title = document.getElementById('title').value;
         projects.createProject(title);
 
-        updateProjectOptions(allProjects);
-        updateProjectOptions(allProjects, 'edit-project-select');
+        syncProjects();
+
+        updateProjectOptions(projects.getProjects());
+        updateProjectOptions(projects.getProjects(), 'edit-project-select');
         
-        renderProjects(allProjects);
+        renderProjects(projects.getProjects());
         projectDialog.close();
         projectForm.reset();
 
@@ -38,10 +40,12 @@ export function initProjectEvents(projects, renderProjects, updateProjectOptions
         const projectIndex = Number(projectElement.getAttribute('data-project-id'));
         console.log(projectIndex);
         projects.deleteProject(projectIndex);
-                                                                                              
-        renderProjects(allProjects);
-        updateProjectOptions(allProjects);
-        updateProjectOptions(allProjects, 'edit-project-select');
+                                          
+        syncProjects();
+        
+        renderProjects(projects.getProjects());
+        updateProjectOptions(projects.getProjects());
+        updateProjectOptions(projects.getProjects(), 'edit-project-select');
 
         //Return to inbox state
         updateHeader('Inbox');
