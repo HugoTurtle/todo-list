@@ -37,4 +37,14 @@ export class ProjectManager {
             this.projects.splice(index, 1);
         }
     }
+
+    loadProjectsFromStorage(projectObj) {
+        this.projects = projectObj.map(obj => Project.fromJSON(obj));
+
+        const maxId = this.projects.reduce((max, project) => {
+            return project.getID() > max ? project.getID() : max;
+        }, -1);
+
+        this.nextId = maxId + 1;
+    }
 }
