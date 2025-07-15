@@ -8,7 +8,7 @@ export function saveProject(project) {
 }
 
 export function loadProjects() {
-    return localStorage.getItem(STORAGE_KEYS.PROJECTS);
+    return JSON.parse(localStorage.getItem(STORAGE_KEYS.PROJECTS));
 }   
 
 export function saveTask(task) {
@@ -16,5 +16,5 @@ export function saveTask(task) {
 }
 
 export function loadTasks() {
-    return localStorage.getItem(STORAGE_KEYS.TASKS);
+    return JSON.parse(localStorage.getItem(STORAGE_KEYS.TASKS));
 }
