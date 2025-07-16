@@ -12,6 +12,7 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
     let taskToModify = null;
 
     const syncTasks = () => saveTasks(tasks.getTasks());
+    const formatDueDate = (dueDate) => dueDate ? format(parseISO(dueDate), "MM/dd/yyyy") : '';
 
     //Open task creation modal
     addTaskBtn.addEventListener('click', () => {
@@ -26,8 +27,7 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
         const description = document.getElementById('description').value;
         const priorityLevel = document.getElementById('priority-status').value;
         const dueDate = document.getElementById('date-picker').value;
-        const formattedDate = format(parseISO(dueDate), "MM/dd/yyyy");
-
+        const formattedDate = formatDueDate(dueDate);
         const userProject = document.getElementById('project-select').value;
         
         tasks.createTask(title, description, priorityLevel, formattedDate, userProject);
@@ -48,7 +48,9 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
 
         document.getElementById('edit-task-name').value = taskToModify.getTitle();
         document.getElementById('edit-description').value = taskToModify.getDescription();
-        document.getElementById('edit-date-picker').value = format(taskToModify.getDate(), 'yyyy-MM-dd');
+        document.getElementById('edit-date-picker').value = taskToModify.getDate()
+            ? format(parseISO(taskToModify.getDate()), 'yyyy-MM-dd')
+            : '';
         document.getElementById('edit-priority-status').value = taskToModify.getPriorityLevel();
 
         updateProjectOptions(projects.getProjects(), 'edit-project-select');
@@ -65,7 +67,7 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
         const description = document.getElementById('edit-description').value;
         const priorityLevel = document.getElementById('edit-priority-status').value;
         const dueDate = document.getElementById('edit-date-picker').value;
-        const formattedDate = format(parseISO(dueDate), "MM/dd/yyyy");
+        const formattedDate = formatDueDate(dueDate);
         const userProject = document.getElementById('edit-project-select').value;
            
         taskToModify.modifyTask(title, description, priorityLevel, formattedDate, userProject);
