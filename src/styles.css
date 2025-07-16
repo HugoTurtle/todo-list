@@ -297,6 +297,9 @@ input[type="button"] {
   display: flex;
   justify-content: space-evenly;
 }
+input#task-name {
+  height: 35px;
+}
 
 .task-name-form {
   grid-column: 1 / 2;
