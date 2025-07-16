@@ -23,6 +23,11 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
     taskForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        if (!taskForm.checkValidity()) {
+          taskForm.classList.add('was-submitted');
+          return; 
+        }
+
         const title = document.getElementById('task-name').value;
         const description = document.getElementById('description').value;
         const priorityLevel = document.getElementById('priority-status').value;
@@ -36,6 +41,9 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
         
         const currentState = document.querySelector('.header').textContent;
         renderTask(tasks.sortTasks(currentState));
+
+        taskForm.reset();
+        taskForm.classList.remove('was-submitted');
         taskDialog.close();
     });
 
@@ -111,6 +119,7 @@ export function initTaskEvents(tasks, projects, renderTask, updateProjectOptions
       
     //Cancel buttons
     taskDialog.querySelector('.cancel').addEventListener('click', () => {
+        taskForm.classList.remove('was-submitted');
         taskDialog.close();
     })
     modifyTaskDialog.querySelector('.cancel').addEventListener('click', () => {

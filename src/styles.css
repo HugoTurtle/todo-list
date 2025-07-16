@@ -301,7 +301,13 @@ input#task-name,
 input#edit-task-name {
   height: 35px;
 }
-
+label[for='task-name']:after {
+  content: '* '
+}
+#task-form.was-submitted #task-name:invalid {
+  border: 2px solid red;
+  background-color: #ffe5e5;
+}
 .task-name-form {
   grid-column: 1 / 2;
 }
