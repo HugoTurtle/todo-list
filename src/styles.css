@@ -314,6 +314,7 @@ input[type='date'] {
 .task-due-date-form,
 .task-priority-form {
   align-items: center;
+  gap: 5px;
 }
 
 .task-user-project-form {
